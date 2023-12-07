@@ -31,7 +31,6 @@
 void Diccionario(char* szNombre, char szPalabras[][TAMTOKEN], int iEstadisticas[], int& iNumElementos) {
 	FILE* fp;
 	iNumElementos = 0;
-	iNumElementos = 1;
 	char array[TAMTOKEN];
 	const char* punnt = " \t\n\r.,;()";
 
