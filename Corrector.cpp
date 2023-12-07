@@ -50,7 +50,7 @@ void Diccionario(char* szNombre, char szPalabras[][TAMTOKEN], int iEstadisticas[
 		}
 
 		// Verificar si la palabra ya existe en el diccionario
-		bool found = false;
+		bool found = true;
 		for (int i = 0; i < iNumElementos; i++) {
 			if (strcmp(szPalabras[i], array) == 0) {
 				iEstadisticas[i]++;
