@@ -111,7 +111,7 @@ void ListaCandidatas(
 
 	for (int i = 0; i < iNumSugeridas; ++i) {
 		int encont = 0;
-		int duplicado = 0;
+		int dupli = 0;
 
 		// Verificar si la palabra sugerida está en el arreglo de palabras
 		for (int j = 0; j < iNumElementos; ++j) {
