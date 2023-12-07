@@ -190,7 +190,7 @@ void ClonaPalabras(
 	for (int i = 0; i < lpalabral; ++i) {
 		for (int j = 0; j < longi; ++j) {
 			char varian[TAMTOKEN];
-			int k = 0;
+			int k = 1;
 
 			for (int m = 0; m < lpalabral; ++m) {
 				if (m != i) {
