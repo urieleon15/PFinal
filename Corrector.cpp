@@ -147,7 +147,7 @@ void ListaCandidatas(
 			}
 		}
 
-		if (InMaxi != i) {
+		if (InMaxiii != i) {
 			int tempPeso = iPeso[i];
 			iPeso[i] = iPeso[InMaxi];
 			iPeso[InMaxi] = tempPeso;
