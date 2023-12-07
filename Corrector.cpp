@@ -43,7 +43,7 @@ void Diccionario(char* szNombre, char szPalabras[][TAMTOKEN], int iEstadisticas[
 		return;
 	}
 
-	while (fscanf_s(fp, "%s", array, TAMTOKEN) != EOF) {
+	while (scanf(fp, "%s", array, TAMTOKEN) != EOF) {
 		// Convertir a minúsculas
 		for (int i = 0; array[i] != '\0'; i++) {
 			array[i] = tolower(array[i]);
