@@ -31,6 +31,7 @@
 void Diccionario(char* szNombre, char szPalabras[][TAMTOKEN], int iEstadisticas[], int& iNumElementos) {
 	FILE* fp;
 	iNumElementos = 0;
+	iNumElementos = 1;
 	char array[TAMTOKEN];
 	const char* punnt = " \t\n\r.,;()";
 
@@ -44,7 +45,7 @@ void Diccionario(char* szNombre, char szPalabras[][TAMTOKEN], int iEstadisticas[
 	}
 
 	while (fscanf_s(fp, "%s", array, TAMTOKEN) != EOF) {
-		// Convertir a minúsculas
+		// Convertir a minÃºsculas
 		for (int i = 0; array[i] != '\0'; i++) {
 			array[i] = tolower(array[i]);
 		}
@@ -59,7 +60,7 @@ void Diccionario(char* szNombre, char szPalabras[][TAMTOKEN], int iEstadisticas[
 			}
 		}
 
-		// Si no se encontró, agregar la palabra al diccionario
+		// Si no se encontrÃ³, agregar la palabra al diccionario
 		if (!found) {
 			strcpy_s(szPalabras[iNumElementos], TAMTOKEN, array);
 			iEstadisticas[iNumElementos++]++;
@@ -68,7 +69,7 @@ void Diccionario(char* szNombre, char szPalabras[][TAMTOKEN], int iEstadisticas[
 
 	fclose(fp);
 
-	// Ordenar las palabras y sus estadísticas
+	// Ordenar las palabras y sus estadÃ­sticas
 	for (int i = 0; i < iNumElementos - 1; i++) {
 		for (int j = 0; j < iNumElementos - i - 1; j++) {
 			if (strcmp(szPalabras[j], szPalabras[j + 1]) > 0) {
@@ -113,12 +114,12 @@ void ListaCandidatas(
 		int encontrado = 0;
 		int duplicado = 0;
 
-		// Verificar si la palabra sugerida está en el arreglo de palabras
+		// Verificar si la palabra sugerida estÃ¡ en el arreglo de palabras
 		for (int j = 0; j < iNumElementos; ++j) {
 			if (strcmp(szPalabrasSugeridas[i], szPalabras[j]) == 0) {
 				encontrado = 1;
 
-				// Verificar si la palabra sugerida ya está en la lista final
+				// Verificar si la palabra sugerida ya estÃ¡ en la lista final
 				for (int k = 0; k < iNumLista; ++k) {
 					if (strcmp(szListaFinal[k], szPalabrasSugeridas[i]) == 0) {
 						duplicado = 1;
@@ -137,7 +138,7 @@ void ListaCandidatas(
 	}
 
 
-	// Ordenar la lista final por peso usando el algoritmo de selección
+	// Ordenar la lista final por peso usando el algoritmo de selecciÃ³n
 	for (int i = 0; i < iNumLista - 1; i++) {
 		int InMaxi = i;
 
@@ -171,15 +172,15 @@ void ClonaPalabras(
 	char szPalabrasSugeridas[][TAMTOKEN],
 	int& iNumSugeridas)
 {
-	// Asignación de una sola palabra sugerida
+	// AsignaciÃ³n de una sola palabra sugerida
 	strcpy_s(szPalabrasSugeridas[0], TAMTOKEN, szPalabraLeida);
 	iNumSugeridas = 1;
 
-	// Definición del abecedario
-	const char* abecedario = "abcdefghijklmnopqrstuvwxyzáéíóú";
+	// DefiniciÃ³n del abecedario
+	const char* abecedario = "abcdefghijklmnopqrstuvwxyzÃ¡Ã©Ã­Ã³Ãº";
 	int longi = strlen(abecedario);
 
-	// Copiar la palabra leída a la lista de palabras sugeridas
+	// Copiar la palabra leÃ­da a la lista de palabras sugeridas
 	if (iNumSugeridas < TAMTOKEN) {
 		strcpy_s(szPalabrasSugeridas[iNumSugeridas++], TAMTOKEN, szPalabraLeida);
 	}
@@ -194,16 +195,16 @@ void ClonaPalabras(
 
 			for (int m = 0; m < lpalabral; ++m) {
 				if (m != i) {
-					varian[k++] = szPalabraLeida[m]; // Copiar caracteres distintos al de la posición i
+					varian[k++] = szPalabraLeida[m]; // Copiar caracteres distintos al de la posiciÃ³n i
 				}
 				else {
-					varian[k++] = abecedario[j]; // Reemplazar el carácter en la posición i con uno del abecedario
+					varian[k++] = abecedario[j]; // Reemplazar el carÃ¡cter en la posiciÃ³n i con uno del abecedario
 				}
 			}
 
-			varian[k] = '\0'; // Asegurar la terminación de la cadena
+			varian[k] = '\0'; // Asegurar la terminaciÃ³n de la cadena
 
-			// Verificar si la palabra sugerida ya está en la lista
+			// Verificar si la palabra sugerida ya estÃ¡ en la lista
 			int sifound = 0;
 			int l = 0;
 
@@ -216,7 +217,7 @@ void ClonaPalabras(
 			}
 
 
-			// Si la palabra sugerida no está ya en la lista, agrégala
+			// Si la palabra sugerida no estÃ¡ ya en la lista, agrÃ©gala
 			if (!sifound) {
 				strcpy_s(szPalabrasSugeridas[iNumSugeridas++], TAMTOKEN, varian);
 			}
